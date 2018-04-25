@@ -6,11 +6,12 @@ import Swal from 'sweetalert2'
 import VeeValidate from 'vee-validate'
 import { routes } from './routes.js'
 import Auth from './Auth.js'
-
+// window.$ = window.jquery = require('jquery')
 
 Vue.use(VueRouter)
 Vue.use(VeeValidate)
 Vue.use(Auth)
+
 
 Object.defineProperties(Vue.prototype, {
     $swal: {
@@ -23,6 +24,7 @@ Object.defineProperties(Vue.prototype, {
 
 const router = new VueRouter({
     mode: 'history',
+    linkActiveClass: 'active',
     routes
 })
 

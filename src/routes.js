@@ -1,5 +1,5 @@
 import Login from './components/login.vue'
-//import Registration from './components/registration.vue'
+import employees from './components/employee/allemployee.vue'
 //import Feed from './components/feed.vue'
 
 export const routes = [
@@ -13,6 +13,13 @@ export const routes = [
    {
        path: "/login",
        component: Login,
+       meta: {
+           forVisitors: true
+       }
+   },
+   {
+       path: "/employees",
+       component: employees,
        meta: {
            forVisitors: true
        }
