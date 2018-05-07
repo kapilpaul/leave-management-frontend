@@ -5,10 +5,10 @@
             <div class="content container-fluid">
                 <div class="row">
                     <div class="col-xs-4">
-                        <h4 class="page-title">Employee</h4>
+                        <h4 class="page-title">Company</h4>
                     </div>
                     <div class="col-xs-8 text-right m-b-20">
-                        <a href="#" class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#add_employee"><i class="fa fa-plus"></i> Add Employee</a>
+                        <a href="#" class="btn btn-primary rounded pull-right" data-toggle="modal" data-target="#add_company"><i class="fa fa-plus"></i> Add Company</a>
                         <div class="view-icons">
                             <a href="employees.html" class="grid-view btn btn-link active"><i class="fa fa-th"></i></a>
                             <a href="employees-list.html" class="list-view btn btn-link"><i class="fa fa-bars"></i></a>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="row staff-grid-row">
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
+                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3" v-for="company in companies">
                         <div class="profile-widget">
                             <div class="profile-img">
                                 <a href="profile.html"><img class="avatar" src="assets/img/user.jpg" alt=""></a>
@@ -57,184 +57,8 @@
                                     <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
                                 </ul>
                             </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">John Doe</a></h4>
-                            <div class="small text-muted">Web Designer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">R</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Richard Miles</a></h4>
-                            <div class="small text-muted">Web Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">J</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">John Smith</a></h4>
-                            <div class="small text-muted">Android Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">M</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Mike Litorus</a></h4>
-                            <div class="small text-muted">IOS Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">W</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Wilmer Deluna</a></h4>
-                            <div class="small text-muted">Team Leader</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">J</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Jeffrey Warden</a></h4>
-                            <div class="small text-muted">Web Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">B</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Bernardo Galaviz</a></h4>
-                            <div class="small text-muted">Web Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">L</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Lesley Grauer</a></h4>
-                            <div class="small text-muted">Team Leader</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">J</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Jeffery Lalor</a></h4>
-                            <div class="small text-muted">Team Leader</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">L</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Loren Gatlin</a></h4>
-                            <div class="small text-muted">Android Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">T</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Tarah Shropshire</a></h4>
-                            <div class="small text-muted">Android Developer</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
-                        <div class="profile-widget">
-                            <div class="profile-img">
-                                <a href="profile.html" class="avatar">C</a>
-                            </div>
-                            <div class="dropdown profile-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">Catherine Manseau</a></h4>
-                            <div class="small text-muted">Android Developer</div>
+                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">{{ company.name }}</a></h4>
+                            <div class="small text-muted">{{ company.address }}</div>
                         </div>
                     </div>
                 </div>
@@ -449,94 +273,108 @@
                 </div>
             </div>
         </div>
-        <div id="add_employee" class="modal custom-modal fade" role="dialog">
+        <div id="add_company" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="modal-content modal-lg">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Add Employee</h4>
-                    </div>
                     <div class="modal-body">
-                        <form class="m-b-30" @submit.prevent="createEmployee">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">First Name <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4 class="modal-title">Add Company</h4>
+                            <form @submit.prevent="addCompany">
+                                <h3 class="page-title">Company Details</h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Company Name <span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text" v-model="companyDetails.name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Contact Person</label>
+                                            <input class="form-control " type="text" v-model="companyDetails.contact_person">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Last Name</label>
-                                        <input class="form-control" type="text">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.address">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        <div class="form-group">
+                                            <label>Country</label>
+                                            <select class="form-control select" v-model="companyDetails.country">
+                                                <option value="Bangladesh">Bangladesh</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.city">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        <div class="form-group">
+                                            <label>State/Province</label>
+                                            <select class="form-control select" v-model="companyDetails.state">
+                                                <option>Dhaka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-3">
+                                        <div class="form-group">
+                                            <label>Postal Code</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.postal_code">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Username <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" type="email" v-model="companyDetails.email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.phone">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Email <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="email">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Mobile Number</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.mobile">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Fax</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.fax">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Password</label>
-                                        <input class="form-control" type="password">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Website Url</label>
+                                            <input class="form-control" type="text" v-model="companyDetails.website_url">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Confirm Password</label>
-                                        <input class="form-control" type="password">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center m-t-20">
+                                        <button type="submit" class="btn btn-primary">Save &amp; update</button>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Employee ID <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Joining Date <span class="text-danger">*</span></label>
-                                        <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Phone </label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Company</label>
-                                        <select class="select">
-                                            <option value="">Global Technologies</option>
-                                            <option value="1">Delta Infotech</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label class="control-label">Designation</label>
-                                        <select class="select">
-                                            <option>Web Developer</option>
-                                            <option>Web Designer</option>
-                                            <option>SEO Analyst</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="m-t-20 text-center">
-                                <button class="btn btn-primary">Create Employee</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -840,14 +678,28 @@
 </template>
 
 <script>
-//    import sidenav from '../headerMenu.vue'
     export default{
         data() {
             return {
-
+                companies : [],
+                companyDetails : {
+                    name : '',
+                    contact_person : '',
+                    address : '',
+                    country : 'Bangladesh',
+                    city : '',
+                    state : 'Dhaka',
+                    postal_code : '',
+                    email : '',
+                    phone : '',
+                    mobile : '',
+                    fax : '',
+                    website_url : ''
+                }
             }
         },
         mounted() {
+            this.getCompanies();
             jQuery(document).ready(function() {
                 if($('.select').length > 0 ){
                     $('.select').select2({
@@ -858,8 +710,20 @@
             })
         },
         methods : {
-            createEmployee() {
-                this.$swal('hey')
+            addCompany () {
+                this.$axios.post('api/company', this.companyDetails, this.$auth.getHeader()).then(response => {
+                    console.log(response)
+                    this.$swal({
+                        title: 'Success',
+                        text: 'Added Successfully',
+                        type: 'success',
+                    })
+                })
+            },
+            getCompanies () {
+                this.$axios.get('api/company', this.$auth.getHeader()).then(response => {
+                    this.companies = response.data.data
+                })
             }
         }
     }

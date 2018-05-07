@@ -28,6 +28,7 @@ const router = new VueRouter({
     routes
 })
 
+axios.defaults.baseURL = 'http://leavemanagement.local/';
 
 axios.interceptors.response.use(function (response) {
     return response;
@@ -36,14 +37,19 @@ axios.interceptors.response.use(function (response) {
         let errorData = error.response;
         console.log(errorData)
         if(errorData.status === 500) {
-            Swal({
-                title: errorData.status.toString(),
-                text: errorData.data.error,
-                type: 'error',
-            }).then((result) => {
-                router.push("/feed")
-            })
+            var stext = errorData.statusText
         }
+        if(errorData.status === 401) {
+            var stext = errorData.data.error
+        }
+
+        Swal({
+            title: errorData.status.toString(),
+            text: stext,
+            type: 'error',
+        }).then((result) => {
+            router.push("/employees")
+        })
     }
 });
 
@@ -52,7 +58,7 @@ router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.forVisitors)) {
         if(Vue.auth.isAuthenticated()) {
             next({
-                path : '/feed'
+                path : '/employees'
             })
         } else next()
     } else if(to.matched.some(record => record.meta.forAuth)) {
@@ -63,7 +69,6 @@ router.beforeEach((to, from, next) => {
         } else next()
     } else next()
 })
-
 
 
 new Vue({

@@ -1500,3 +1500,7 @@ table.table-inbox tbody tr.checked {background-color: #ffffcc;}
 	.chat-menu.navbar-nav > li > a {margin-left: 10px;}
 	.contact-alphapets {top:113px;}
 }
+
+.swal2-popup{
+    font-size: 1.7rem;
+}

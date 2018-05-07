@@ -36,23 +36,35 @@
         data () {
             return {
                 email : "",
-                password : ""
+                password : "",
             }
         },
         methods : {
             login() {
-                this.$swal(
-                    this.email,
-                    this.password,
-                    'success'
-                )
+                var data = {
+                    email : this.email,
+                    password : this.password
+                }
+
+                this.$axios.post('api/login', data).then(response => {
+                    var lpdata = {
+                        client_id : 2,
+                        client_secret : 'YK0p7WrAdBRTdOxJldveHX7QPPB11AyycjiVWlvM',
+                        grant_type : 'password',
+                        username : this.email,
+                        password : this.password
+                    };
+
+                    this.$axios.post('oauth/token', lpdata).then(response => {
+                        this.$auth.setToken(response.data.access_token, response.data.expires_in + Date.now())
+                        this.$router.push("/employees")
+                    });
+                })
             }
         }
     }
 </script>
 
 <style>
-    .swal2-popup{
-        font-size: 1.7rem;
-    }
+
 </style>

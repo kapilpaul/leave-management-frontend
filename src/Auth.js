@@ -46,7 +46,6 @@ export default function(Vue){
 
     }
 
-
     Object.defineProperties(Vue.prototype, {
         $auth: {
             get() {

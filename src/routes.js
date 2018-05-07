@@ -1,5 +1,6 @@
 import Login from './components/login.vue'
 import employees from './components/employee/allemployee.vue'
+import company from './components/settings/companysettings.vue'
 //import Feed from './components/feed.vue'
 
 export const routes = [
@@ -21,7 +22,14 @@ export const routes = [
        path: "/employees",
        component: employees,
        meta: {
-           forVisitors: true
+           forAuth: true
+       }
+   },
+   {
+       path: "/company-settings",
+       component: company,
+       meta: {
+           forAuth: true
        }
    }
 ]
