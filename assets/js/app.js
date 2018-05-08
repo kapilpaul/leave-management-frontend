@@ -34,7 +34,6 @@
 
         // Sidebar Initiate
 
-        $.Sidemenu.init();
 
         // Sidebar overlay
 

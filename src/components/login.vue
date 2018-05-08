@@ -18,7 +18,7 @@
                                 <input class="form-control floating" type="password" v-model="password">
                             </div>
                             <div class="form-group text-center">
-                                <button class="btn btn-primary btn-block account-btn" type="submit">Login</button>
+                                <button class="btn btn-primary btn-block account-btn" type="submit">Login <i v-if="loading" class="fa fa-refresh fa-spin fa-fw"></i></button>
                             </div>
                             <div class="text-center">
                                 <a href="#">Forgot your password?</a>
@@ -37,10 +37,12 @@
             return {
                 email : "",
                 password : "",
+                loading : false
             }
         },
         methods : {
             login() {
+                this.loading = true;
                 var data = {
                     email : this.email,
                     password : this.password
@@ -57,7 +59,9 @@
 
                     this.$axios.post('oauth/token', lpdata).then(response => {
                         this.$auth.setToken(response.data.access_token, response.data.expires_in + Date.now())
-                        this.$router.push("/employees")
+                        this.loading = false;
+//                        this.$router.push("/employees")
+                        window.location = "http://localhost:8080/employees";
                     });
                 })
             }

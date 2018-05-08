@@ -399,11 +399,11 @@ table.dataTable {margin-bottom: 15px !important;margin-top: 15px !important;}
 .panel-table .panel-footer a {color:#333;}
 .panel-title > a.btn {color:#fff;}
 .custom-table tr {background-color: #fff;box-shadow: 0 0 3px #e5e5e5;}
-.table.custom-table > tbody > tr > td, 
-.table.custom-table > tbody > tr > th, 
-.table.custom-table > tfoot > tr > td, 
-.table.custom-table > tfoot > tr > th, 
-.table.custom-table > thead > tr > td, 
+.table.custom-table > tbody > tr > td,
+.table.custom-table > tbody > tr > th,
+.table.custom-table > tfoot > tr > td,
+.table.custom-table > tfoot > tr > th,
+.table.custom-table > thead > tr > td,
 .table.custom-table > thead > tr > th {padding: 10px 8px;vertical-align: middle;}
 #area-chart, #line-chart, #bar-chart, #stacked, #pie-chart{min-height: 250px;}
 .dash-widget-icon {background-color: #eee;border-radius: 100%;color: #777;display: inline-block;float: left;font-size: 30px;height: 60px;line-height: 60px;margin-right: 10px;text-align: center;width: 60px;}
@@ -502,7 +502,7 @@ table.dataTable {margin-bottom: 15px !important;margin-top: 15px !important;}
 .last-seen {color: #a3afb7;display: block;font-size: 12px;}
 .chat-menu {margin-top: 6px;}
 .chat-menu.navbar-nav > li > a {color: #00c5fb;font-size: 26px;margin-left: 15px;padding: 0;}
-.chat-menu.navbar-nav > li > a:hover, .chat-menu.navbar-nav > li > a:focus {background-color:transparent;} 
+.chat-menu.navbar-nav > li > a:hover, .chat-menu.navbar-nav > li > a:focus {background-color:transparent;}
 .chat-menu .dropdown-menu {left: auto;right: 0;}
 .message-search {margin-top: 5px;}
 .message-search .input-group {background-color: #f3f7f9;border: 1px solid #e4eaec;border-radius: 50px;}
@@ -1079,7 +1079,7 @@ transform-origin: left top;transition: 240ms;left: 12px;top: -8px;z-index: 1;col
 .task-overlay.opened {display: block;}
 .sidebar-menu.opened {opacity: 1; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); -ms-transform: translateX(0px); -o-transform: translateX(0px); transform: translateX(0px);margin-left:0;}
 html.menu-opened {overflow: hidden;}
-html.menu-opened body {overflow: hidden;}	
+html.menu-opened body {overflow: hidden;}
 .task-chat-view.opened {margin-right:0;}
 .chat-profile-view.opened {margin-right:0;}
 .menu-opened .message-view.task-view {width:100%;}
@@ -1502,5 +1502,9 @@ table.table-inbox tbody tr.checked {background-color: #ffffcc;}
 }
 
 .swal2-popup{
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
+}
+
+.loaderimage{
+    width: 100% !important;
 }

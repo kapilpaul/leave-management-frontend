@@ -44,7 +44,12 @@
                         <a href="#" class="btn btn-success btn-block"> Search </a>
                     </div>
                 </div>
-                <div class="row staff-grid-row">
+                <div class="row staff-grid-row" v-if="loader">
+                    <div class="col-md-offset-5 col-md-2">
+                        <img src="assets/img/loading_animation2.gif" alt="" class="loaderimage">
+                    </div>
+                </div>
+                <div class="row staff-grid-row" v-else>
                     <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3" v-for="company in companies">
                         <div class="profile-widget">
                             <div class="profile-img">
@@ -695,7 +700,8 @@
                     mobile : '',
                     fax : '',
                     website_url : ''
-                }
+                },
+                loader : false
             }
         },
         mounted() {
@@ -721,8 +727,10 @@
                 })
             },
             getCompanies () {
+                this.loader = true;
                 this.$axios.get('api/company', this.$auth.getHeader()).then(response => {
                     this.companies = response.data.data
+                    this.loader = false;
                 })
             }
         }
