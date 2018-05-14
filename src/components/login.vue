@@ -40,6 +40,9 @@
                 loading : false
             }
         },
+        mounted () {
+            this.$jqscripts.manageinit()
+        },
         methods : {
             login() {
                 this.loading = true;

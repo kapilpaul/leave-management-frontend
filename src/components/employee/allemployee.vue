@@ -844,22 +844,48 @@
     export default{
         data() {
             return {
-
+                companies : [],
+                designations : [],
+                employees : [],
+                employeeDetails : {
+                    first_name : '',
+                    last_name : '',
+                    user_name : '',
+                    email : '',
+                    password : 'nothing1234',
+                    employee_number : '',
+                    joining_date : '',
+                    contact : '',
+                    company_id : '',
+                    supervisior_id : '',
+                    designation_id : '',
+                }
             }
         },
         mounted() {
-            jQuery(document).ready(function() {
-                if($('.select').length > 0 ){
-                    $('.select').select2({
-                        minimumResultsForSearch: -1,
-                        width: '100%'
-                    });
-                }
-            })
+            this.$jqscripts.manageinit()
+            this.getEmployees()
+            this.getCompanies()
+            this.getDesignations()
         },
         methods : {
             createEmployee() {
                 this.$swal('hey')
+            },
+            getEmployees () {
+                this.$axios.get('api/employee', this.$auth.getHeader()).then(response => {
+                    this.employees = response.data.data
+                })
+            },
+            getCompanies () {
+                this.$axios.get('api/company', this.$auth.getHeader()).then(response => {
+                    this.companies = response.data.data
+                })
+            },
+            getDesignations () {
+                this.$axios.get('api/designations', this.$auth.getHeader()).then(response => {
+                    this.designations = response.data.data
+                })
             }
         }
     }

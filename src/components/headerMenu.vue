@@ -129,8 +129,8 @@
                                 <li><a href="holidays.html">Holidays</a></li>
                                 <li><a href="leaves.html"><span>Leave Requests</span> <span class="badge bg-primary pull-right">1</span></a></li>
                                 <li><a href="attendance.html">Attendance</a></li>
-                                <li><a href="departments.html">Departments</a></li>
-                                <li><a href="designations.html">Designations</a></li>
+                                <li><router-link to="/departments">Departments</router-link></li>
+                                <li><router-link to="/designations">Designations</router-link></li>
                             </ul>
                         </li>
                         <li>

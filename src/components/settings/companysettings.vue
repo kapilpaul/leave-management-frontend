@@ -311,7 +311,7 @@
                                     <div class="col-sm-6 col-md-6 col-lg-3">
                                         <div class="form-group">
                                             <label>Country</label>
-                                            <select class="form-control select" v-model="companyDetails.country">
+                                            <select class="form-control" v-model="companyDetails.country">
                                                 <option value="Bangladesh">Bangladesh</option>
                                             </select>
                                         </div>
@@ -325,7 +325,7 @@
                                     <div class="col-sm-6 col-md-6 col-lg-3">
                                         <div class="form-group">
                                             <label>State/Province</label>
-                                            <select class="form-control select" v-model="companyDetails.state">
+                                            <select class="form-control" v-model="companyDetails.state">
                                                 <option>Dhaka</option>
                                             </select>
                                         </div>
@@ -691,9 +691,9 @@
                     name : '',
                     contact_person : '',
                     address : '',
-                    country : 'Bangladesh',
+                    country : '',
                     city : '',
-                    state : 'Dhaka',
+                    state : '',
                     postal_code : '',
                     email : '',
                     phone : '',
@@ -706,19 +706,13 @@
         },
         mounted() {
             this.getCompanies();
-            jQuery(document).ready(function() {
-                if($('.select').length > 0 ){
-                    $('.select').select2({
-                        minimumResultsForSearch: -1,
-                        width: '100%'
-                    });
-                }
-            })
+            this.$jqscripts.manageinit();
         },
         methods : {
             addCompany () {
                 this.$axios.post('api/company', this.companyDetails, this.$auth.getHeader()).then(response => {
                     console.log(response)
+                    this.getCompanies();
                     this.$swal({
                         title: 'Success',
                         text: 'Added Successfully',
