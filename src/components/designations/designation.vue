@@ -24,7 +24,7 @@
                                 </thead>
                                 <tbody>
                                 <tr v-for="(item,index) in designations">
-                                    <td>1</td>
+                                    <td>{{ index+1 }}</td>
                                     <td>{{ item.name }}</td>
                                     <td>{{ item.department.name }}</td>
                                     <td class="text-right">
@@ -128,7 +128,6 @@
             },
             getDesignations() {
                 this.$axios.get('api/designations', this.$auth.getHeader()).then(response => {
-                    console.log(response)
                     this.designations = response.data.data
                 })
             },

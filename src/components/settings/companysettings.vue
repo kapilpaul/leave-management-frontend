@@ -711,7 +711,6 @@
         methods : {
             addCompany () {
                 this.$axios.post('api/company', this.companyDetails, this.$auth.getHeader()).then(response => {
-                    console.log(response)
                     this.getCompanies();
                     this.$swal({
                         title: 'Success',
