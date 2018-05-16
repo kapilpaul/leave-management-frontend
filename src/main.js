@@ -33,6 +33,7 @@ const router = new VueRouter({
 axios.defaults.baseURL = 'http://leavemanagement.local/';
 
 axios.interceptors.response.use(function (response) {
+    // console.log(response)
     return response;
 }, function (error) {
     if(error) {

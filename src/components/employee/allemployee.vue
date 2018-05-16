@@ -21,7 +21,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3" v-for="(item, index) in employees">
                         <div class="profile-widget">
                             <div class="profile-img">
-                                <a href="profile.html"><img class="avatar" src="assets/img/user.jpg" alt=""></a>
+                                <router-link :to="'/employee/' + item.user_name + '/details'"><img class="avatar" src="assets/img/user.jpg" alt=""></router-link>
                             </div>
                             <div class="dropdown profile-action">
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
@@ -30,7 +30,9 @@
                                     <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
                                 </ul>
                             </div>
-                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="profile.html">{{ item.first_name + ' ' + item.last_name }}</a></h4>
+                            <h4 class="user-name m-t-10 m-b-0 text-ellipsis">
+                                <router-link :to="'/employee/' + item.user_name + '/details'">{{ item.first_name + ' ' + item.last_name }}</router-link>
+                            </h4>
                             <div class="small text-muted">{{ item.designation }}</div>
                             <div class="small text-muted">{{ item.department }}</div>
                         </div>
