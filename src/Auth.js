@@ -4,7 +4,15 @@ export default function(Vue){
             localStorage.setItem('token', token);
             localStorage.setItem('expiration', expiration);
         },
-
+        setRole(role) {
+            localStorage.setItem('role', role);
+        },
+        getRole() {
+            var role = localStorage.getItem('role');
+            if(role === '21232f297a57a5a743894a0e4a801fc3'){
+                return 'admin';
+            }
+        },
         getToken() {
             var token = localStorage.getItem('token');
             var expiration = localStorage.getItem('expiration');
@@ -18,9 +26,7 @@ export default function(Vue){
             }else{
                 return token;
             }
-
         },
-
         isAuthenticated() {
             if(this.getToken()){
                 return true;
@@ -28,7 +34,6 @@ export default function(Vue){
                 return false;
             }
         },
-
         destroyToken() {
             localStorage.removeItem('token')
             localStorage.removeItem('expiration')
@@ -43,7 +48,6 @@ export default function(Vue){
                 }
             }
         }
-
     }
 
     Object.defineProperties(Vue.prototype, {

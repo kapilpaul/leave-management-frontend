@@ -1,6 +1,7 @@
 import Login from './components/login.vue'
 import employees from './components/employee/allemployee.vue'
 import employeesDetails from './components/employee/details.vue'
+import employeesEdit from './components/employee/edit.vue'
 import company from './components/settings/companysettings.vue'
 import Department from './components/departments/department.vue'
 import Designation from './components/designations/designation.vue'
@@ -33,7 +34,16 @@ export const routes = [
         path: "/employee/:username/details",
         component: employeesDetails,
         meta: {
-            forAuth: true
+            forAuth: true,
+            forAdmin : true
+        }
+    },
+    {
+        path: "/employee/:username/edit",
+        component: employeesEdit,
+        meta: {
+            forAuth: true,
+            forAdmin : true
         }
     },
     {
@@ -63,5 +73,9 @@ export const routes = [
         meta: {
             forAuth: true
         }
+    },
+    {
+        path: "*",
+        component: require('./components/404.vue').default,
     }
 ]

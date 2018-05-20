@@ -59,6 +59,7 @@
                         username : this.email,
                         password : this.password
                     };
+                    this.$auth.setRole(response.data.role)
 
                     this.$axios.post('oauth/token', lpdata).then(response => {
                         this.$auth.setToken(response.data.access_token, response.data.expires_in + Date.now())

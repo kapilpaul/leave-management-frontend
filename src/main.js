@@ -25,7 +25,7 @@ Object.defineProperties(Vue.prototype, {
 })
 
 const router = new VueRouter({
-    mode: 'history',
+    // mode: 'history',
     linkActiveClass: 'active',
     routes
 })
@@ -69,6 +69,10 @@ router.beforeEach((to, from, next) => {
             next({
                 path : '/login'
             })
+        } else if(to.matched.some(record => record.meta.forAdmin)) {
+            if(Vue.auth.getRole() === 'admin') {
+                next()
+            }
         } else next()
     } else next()
 })

@@ -97,7 +97,7 @@
                         <li><a href="profile.html">My Profile</a></li>
                         <li><a href="edit-profile.html">Edit Profile</a></li>
                         <li><a href="settings.html">Settings</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="#/" @click="logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -107,7 +107,7 @@
                     <li><a href="profile.html">My Profile</a></li>
                     <li><a href="edit-profile.html">Edit Profile</a></li>
                     <li><a href="settings.html">Settings</a></li>
-                    <li><a href="login.html">Logout</a></li>
+                    <li><a href="#/" @click="logout">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -117,9 +117,6 @@
                     <ul>
                         <li>
                             <a href="index.html">Dashboard</a>
-                        </li>
-                        <li>
-                            <router-link to="/login" tag="a">Login</router-link>
                         </li>
                         <li class="submenu">
                             <a href="#" class="noti-dot"><span> Employees</span> <span class="menu-arrow"></span></a>
@@ -145,6 +142,12 @@
 
 <script>
     export default {
+        methods : {
+            logout() {
+                this.$auth.destroyToken()
+                this.$router.push('/login')
+            }
+        }
     }
 </script>
 

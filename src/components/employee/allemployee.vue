@@ -26,7 +26,11 @@
                             <div class="dropdown profile-action">
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" data-toggle="modal" data-target="#edit_employee"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+                                    <li>
+                                        <router-link :to="'/employee/' + item.user_name + '/edit'">
+                                            <i class="fa fa-pencil m-r-5"></i> Edit
+                                        </router-link>
+                                    </li>
                                     <li><a href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
                                 </ul>
                             </div>
