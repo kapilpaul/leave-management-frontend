@@ -13,11 +13,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="profile-img-wrap">
+                                    <img class="inline-block" :src="this.$axios.defaults.baseURL + 'image/'
+                                         + employeeDetails.photo_id" alt="user" v-if="employeeDetails.photo_id">
                                     <img class="inline-block" src="http://localhost:8080/assets/img/user.jpg"
-                                         alt="user">
+                                         alt="user" v-else>
                                     <div class="fileupload btn btn-default">
                                         <span class="btn-text">edit</span>
-                                        <input class="upload" type="file">
+                                        <input class="upload" type="file" @change="imageChanged">
                                     </div>
                                 </div>
                                 <div class="profile-basic">
@@ -283,11 +285,9 @@
                                     <hr>
                                 </div>
                                 <div class="add-more">
-                                    <button class="btn btn-primary" @click.prevent="AddEducationField"><i class="fa fa-plus"></i>Add More
-                                        Institute</button>
+                                    <button class="btn btn-primary" @click.prevent="AddEducationField"><i class="fa fa-plus"></i>Add More Institute</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -310,8 +310,9 @@
                 companies : [],
                 designations : [],
                 employees : [],
-                counterrow: 1,
-                educationDetails: []
+                counterrow: 0,
+                educationDetails: [],
+                image : ''
             }
         },
         mounted() {
@@ -330,7 +331,10 @@
                 this.$axios.get('api/employee/' + this.username, this.$auth.getHeader()).then(response => {
                     console.log(response)
                     this.employeeDetails = response.data
+                    this.educationDetails = JSON.parse(response.data.education)
+                    this.counterrow = (this.educationDetails != null) ? this.educationDetails.length : 0
                 }).catch(error => {
+                    console.log(error)
                     this.$router.push('/employees')
                 })
             },
@@ -351,7 +355,9 @@
             },
             updateData () {
                 this.employeeDetails['education'] = this.educationDetails
+                this.employeeDetails['photo'] = this.image
                 this.$axios.patch('api/employee/' + this.username, this.employeeDetails, this.$auth.getHeader()).then(response => {
+                    console.log(response)
                     this.$swal({
                         title: 'Success',
                         text: 'Updated Successfully',
@@ -375,6 +381,13 @@
             },
             deleteEducationField (index) {
                 this.educationDetails.splice(index, 1)
+            },
+            imageChanged(e) {
+                var fileReader = new FileReader()
+                fileReader.readAsDataURL(e.target.files[0])
+                fileReader.onload = (e) => {
+                    this.image = e.target.result
+                }
             }
         },
         filters : {

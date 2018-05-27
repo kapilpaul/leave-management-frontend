@@ -4,11 +4,15 @@
             <div class="content container-fluid">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h4 class="page-title">My Profile</h4>
+                        <h4 class="page-title">{{ employeeDetails.first_name }} {{ employeeDetails.last_name }}'s
+                            Profile</h4>
                     </div>
 
                     <div class="col-sm-4 text-right m-b-30">
-                        <a href="edit-profile.html" class="btn btn-primary rounded"><i class="fa fa-plus"></i> Edit Profile</a>
+                        <!--<a href="edit-profile.html" class="btn btn-primary rounded"><i class="fa fa-plus"></i> Edit Profile</a>-->
+                        <router-link :to="'/employee/' + $route.params.username + '/edit'" :class="'btn btn-primary rounded'">
+                            <i class="fa fa-plus"></i> Edit Profile
+                        </router-link>
                     </div>
                 </div>
                 <div class="card-box">
@@ -17,7 +21,12 @@
                             <div class="profile-view">
                                 <div class="profile-img-wrap">
                                     <div class="profile-img">
-                                        <a href="#"><img class="avatar" src="http://localhost:8080/assets/img/user.jpg" alt=""></a>
+                                        <!--<a href="#">-->
+                                        <img class="avatar" :src="$axios.defaults.baseURL + 'image/' +
+                                        employeeDetails.photo_id"
+                                             alt="" v-if="employeeDetails.photo_id">
+                                        <img class="avatar" src="assets/img/user.jpg" alt="" v-else>
+                                        <!--</a>-->
                                     </div>
                                 </div>
                                 <div class="profile-basic">
@@ -31,7 +40,7 @@
                                                     employeeDetails.supervisior_first_name }}
                                                 {{ employeeDetails.supervisior_last_name }}</div>
                                                 <div class="staff-id">{{ employeeDetails.company }}</div>
-                                                <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div>
+                                                <!--<div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div>-->
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -286,23 +295,23 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card-box m-b-0">
-                            <h3 class="card-title">Skills</h3>
-                            <div class="skills">
-                                <span>IOS</span>
-                                <span>Android</span>
-                                <span>Html</span>
-                                <span>CSS</span>
-                                <span>Codignitor</span>
-                                <span>Php</span>
-                                <span>Javascript</span>
-                                <span>Wordpress</span>
-                                <span>Jquery</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
+                    <!--<div class="col-md-3">-->
+                        <!--<div class="card-box m-b-0">-->
+                            <!--<h3 class="card-title">Skills</h3>-->
+                            <!--<div class="skills">-->
+                                <!--<span>IOS</span>-->
+                                <!--<span>Android</span>-->
+                                <!--<span>Html</span>-->
+                                <!--<span>CSS</span>-->
+                                <!--<span>Codignitor</span>-->
+                                <!--<span>Php</span>-->
+                                <!--<span>Javascript</span>-->
+                                <!--<span>Wordpress</span>-->
+                                <!--<span>Jquery</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="col-md-12">
                         <div class="card-box">
                             <h3 class="card-title">Education Informations</h3>
                             <div class="experience-box">
@@ -322,46 +331,46 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="card-box m-b-0">
-                            <h3 class="card-title">Experience</h3>
-                            <div class="experience-box">
-                                <ul class="experience-list">
-                                    <li>
-                                        <div class="experience-user">
-                                            <div class="before-circle"></div>
-                                        </div>
-                                        <div class="experience-content">
-                                            <div class="timeline-content">
-                                                <a href="#/" class="name">Web Designer at Zen Corporation</a>
-                                                <span class="time">Jan 2013 - Present (5 years 2 months)</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="experience-user">
-                                            <div class="before-circle"></div>
-                                        </div>
-                                        <div class="experience-content">
-                                            <div class="timeline-content">
-                                                <a href="#/" class="name">Web Designer at Ron-tech</a>
-                                                <span class="time">Jan 2013 - Present (5 years 2 months)</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="experience-user">
-                                            <div class="before-circle"></div>
-                                        </div>
-                                        <div class="experience-content">
-                                            <div class="timeline-content">
-                                                <a href="#" class="name">Web Designer at Dalt Technology</a>
-                                                <span class="time">Jan 2013 - Present (5 years 2 months)</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <!--<div class="card-box m-b-0">-->
+                            <!--<h3 class="card-title">Experience</h3>-->
+                            <!--<div class="experience-box">-->
+                                <!--<ul class="experience-list">-->
+                                    <!--<li>-->
+                                        <!--<div class="experience-user">-->
+                                            <!--<div class="before-circle"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="experience-content">-->
+                                            <!--<div class="timeline-content">-->
+                                                <!--<a href="#/" class="name">Web Designer at Zen Corporation</a>-->
+                                                <!--<span class="time">Jan 2013 - Present (5 years 2 months)</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li>-->
+                                        <!--<div class="experience-user">-->
+                                            <!--<div class="before-circle"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="experience-content">-->
+                                            <!--<div class="timeline-content">-->
+                                                <!--<a href="#/" class="name">Web Designer at Ron-tech</a>-->
+                                                <!--<span class="time">Jan 2013 - Present (5 years 2 months)</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li>-->
+                                        <!--<div class="experience-user">-->
+                                            <!--<div class="before-circle"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="experience-content">-->
+                                            <!--<div class="timeline-content">-->
+                                                <!--<a href="#" class="name">Web Designer at Dalt Technology</a>-->
+                                                <!--<span class="time">Jan 2013 - Present (5 years 2 months)</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>

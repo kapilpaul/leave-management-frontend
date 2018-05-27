@@ -21,7 +21,11 @@
                     <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3" v-for="(item, index) in employees">
                         <div class="profile-widget">
                             <div class="profile-img">
-                                <router-link :to="'/employee/' + item.user_name + '/details'"><img class="avatar" src="assets/img/user.jpg" alt=""></router-link>
+                                <router-link :to="'/employee/' + item.user_name + '/details'">
+                                    <img class="avatar" :src="$axios.defaults.baseURL + 'image/' + item.photo_id"
+                                         alt="" v-if="item.photo_id">
+                                    <img class="avatar" src="assets/img/user.jpg" alt="" v-else>
+                                </router-link>
                             </div>
                             <div class="dropdown profile-action">
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
@@ -39,6 +43,7 @@
                             </h4>
                             <div class="small text-muted">{{ item.designation }}</div>
                             <div class="small text-muted">{{ item.department }}</div>
+                            <div class="small text-muted">{{ item.email }}</div>
                         </div>
                     </div>
                 </div>

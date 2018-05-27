@@ -65,7 +65,7 @@
                         this.$auth.setToken(response.data.access_token, response.data.expires_in + Date.now())
                         this.loading = false;
 //                        this.$router.push("/employees")
-                        window.location = "http://localhost:8080/employees";
+                        window.location = "http://localhost:8080/#/employees";
                     });
                 })
             }

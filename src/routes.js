@@ -6,6 +6,7 @@ import company from './components/settings/companysettings.vue'
 import Department from './components/departments/department.vue'
 import Designation from './components/designations/designation.vue'
 import LeaveType from './components/settings/leaveTypes.vue'
+import Holiday from './components/settings/holidays.vue'
 //import Feed from './components/feed.vue'
 
 export const routes = [
@@ -50,28 +51,38 @@ export const routes = [
         path: "/departments",
         component: Department,
         meta: {
-            forAuth: true
+            forAuth: true,
+            forAdmin : true
         }
     },
     {
         path: "/designations",
         component: Designation,
         meta: {
-            forAuth: true
+            forAuth: true,
+            forAdmin : true
         }
     },
     {
         path: "/company-settings",
         component: company,
         meta: {
-            forAuth: true
+            forAuth: true,
+            forAdmin : true
         }
     },
     {
         path: "/leave-types",
         component: LeaveType,
         meta: {
-            forAuth: true
+            forAuth: true,
+        }
+    },
+    {
+        path: "/holidays",
+        component: Holiday,
+        meta: {
+            forAuth: true,
         }
     },
     {

@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="page-title-box pull-left">
-                <h3>Focus Technologies</h3>
+                <h3>Ether Technologies</h3>
             </div>
             <a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
             <ul class="nav navbar-nav navbar-right user-menu pull-right">
@@ -133,6 +133,10 @@
                                 <router-link to="/leave-types" tag="a">Leave Type</router-link>
                             </ul>
                         </li>
+                        <li>
+                            <router-link to="/holidays" tag="a">Holidays</router-link>
+                        </li>
+
                     </ul>
                 </div>
             </div>
