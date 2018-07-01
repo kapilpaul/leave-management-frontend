@@ -7,6 +7,7 @@ import Department from './components/departments/department.vue'
 import Designation from './components/designations/designation.vue'
 import LeaveType from './components/settings/leaveTypes.vue'
 import Holiday from './components/settings/holidays.vue'
+import LeaveRequest from './components/leaverequest/leaverequest.vue'
 //import Feed from './components/feed.vue'
 
 export const routes = [
@@ -81,6 +82,13 @@ export const routes = [
     {
         path: "/holidays",
         component: Holiday,
+        meta: {
+            forAuth: true,
+        }
+    },
+    {
+        path: "/leave-request",
+        component: LeaveRequest,
         meta: {
             forAuth: true,
         }

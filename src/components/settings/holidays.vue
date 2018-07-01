@@ -10,6 +10,7 @@
                             <a href="#" class="btn btn-primary rounded" data-toggle="modal" data-target="#add_holiday"><i class="fa fa-plus"></i> Add New Holiday</a>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">

@@ -51,7 +51,7 @@ axios.interceptors.response.use(function (response) {
             text: stext,
             type: 'error',
         }).then((result) => {
-            router.push("/employees")
+            //router.push("/employees")
         })
     }
 });
